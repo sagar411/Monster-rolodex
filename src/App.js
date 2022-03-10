@@ -1,5 +1,7 @@
 import React,{Component} from 'react';
 import './App.css';
+import { CardList  } from './component/card-list/card-list.component';
+// import { CardList } from './component/card-list/card-list.component';
 
 class App extends Component {
 
@@ -29,7 +31,7 @@ class App extends Component {
 
   componentDidMount(){
     
-    //api request to that url fetch return us and convert to json so js can understaand take the user and set to monsters.
+    //api request to that url fetch return us and convert to json so js can understaand take the user and set to monsters.c
     fetch('https://jsonplaceholder.typicode.com/users')
 
     .then(response=> response.json())
@@ -40,9 +42,8 @@ class App extends Component {
   render(){
   return (
     <div className="App">
-      {
-        this.state.monstors.map(monstor => <h1 key={monstor.id}>{monstor.name} </h1>)
-      }
+      <CardList monstors={this.state.monstors}>   </CardList>
+   
     </div>
   );
 }
