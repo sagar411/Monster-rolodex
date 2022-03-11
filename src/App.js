@@ -11,20 +11,9 @@ class App extends Component {
 
     this.state={
       monstors:[
-      //   {
-      //   name:"Frankenstein",
-      //   id:"1"
-      // },
-      // {
-      //   name:"Dracula",
-      //   id:"2"
-      // },
-      // {
-      //   name:"Zombie"
-      //   ,
-      //   id:"3"
-      // }
-    ]
+
+    ],
+    searchField:""
 
     }
   }
@@ -40,9 +29,23 @@ class App extends Component {
  
 
   render(){
-  return (
+    //make new array useing dot filter method 
+    //destructuring ..
+    const {monstors,searchField }=this.state;
+
+    //equal to...const monsters = this.state.monster &&
+    //  const searchFields = this.state.searchField;
+
+    const filteredMonsters = monstors.filter(monster=>
+      monster.name.toLowerCase().includes(searchField.toLowerCase()) ||monster.email.toLowerCase().includes(searchField.toLowerCase()))
+
+      return (
     <div className="App">
-      <CardList monstors={this.state.monstors}>   </CardList>
+      <input 
+      type="search" 
+      placeholder='search monsters' 
+      onChange={e=>this.setState({searchField:e.target.value })}></input>
+      <CardList monstors={filteredMonsters}>   </CardList>
    
     </div>
   );
