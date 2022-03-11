@@ -1,8 +1,10 @@
 .search input[type=search] {
     float: center;
     padding: 6px;
-    border: none;
+    border: 1px solid;
     margin-top: 8px;
     margin-right: 16px;
     font-size: 17px;
+    margin-bottom: 25px;
+
   }

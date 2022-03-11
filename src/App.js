@@ -32,6 +32,7 @@ class App extends Component {
   
   }
 
+
   render(){
     //make new array useing dot filter method 
     //destructuring ..
@@ -46,6 +47,8 @@ class App extends Component {
       
       return (
     <div className="App">
+
+      <h1>Monsters-rolodex</h1>
       {/* <input 
       type="search" 
       placeholder='search monsters' 
